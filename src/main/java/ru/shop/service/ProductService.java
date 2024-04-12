@@ -1,4 +1,8 @@
-package ru.shop;
+package ru.shop.service;
+
+import ru.shop.modal.Product;
+import ru.shop.modal.ProductType;
+import ru.shop.repository.ProductRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,14 +22,17 @@ public class ProductService {
         return productRepository.findAll();
     };
 
-    public void findByProductType(ProductType type) {
-        List<Product> oldList = findAll();
+    public List<Product> findByProductType(ProductType type) {
         List<Product> newList = new ArrayList<>();
 
-        for (var i : oldList) {
-            if (i.productType() == type) {
-                newList.add(i);
+        for (Product product : productRepository.findAll()) {
+            if (product.productType() == type) {
+                newList.add(product);
             }
         }
+
+        return newList;
     }
 }
+
+

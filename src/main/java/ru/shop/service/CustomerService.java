@@ -1,4 +1,7 @@
-package ru.shop;
+package ru.shop.service;
+
+import ru.shop.modal.Customer;
+import ru.shop.repository.CustomerRepository;
 
 import java.util.List;
 

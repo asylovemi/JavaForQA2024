@@ -1,4 +1,4 @@
-package ru.shop;
+package ru.shop.modal;
 
 public enum ProductType {
     GOOD,

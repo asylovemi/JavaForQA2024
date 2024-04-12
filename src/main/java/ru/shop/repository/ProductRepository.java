@@ -1,15 +1,17 @@
-package ru.shop;
+package ru.shop.repository;
+
+import ru.shop.modal.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductRepository {
-    List<Product> arrList = new ArrayList<>();
+    List<Product> products = new ArrayList<>();
 
     public void save(Product product){
-        arrList.add(product);
+        products.add(product);
     };
     public List<Product> findAll(){
-        return arrList;
+        return products;
     };
 }

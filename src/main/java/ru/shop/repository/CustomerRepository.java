@@ -1,16 +1,18 @@
-package ru.shop;
+package ru.shop.repository;
 
+
+import ru.shop.modal.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository {
-    List<Customer> arrList = new ArrayList<>();
+    List<Customer> customers = new ArrayList<>();
 
     public void save(Customer customer){
-        arrList.add(customer);
+        customers.add(customer);
     };
     public List<Customer> findAll(){
-        return arrList;
+        return customers;
     };
 }

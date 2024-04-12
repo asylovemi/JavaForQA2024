@@ -1,15 +1,17 @@
-package ru.shop;
+package ru.shop.repository;
+
+import ru.shop.modal.Order;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderRepository {
-    List<Order> arrList = new ArrayList<>();
+    List<Order> orders = new ArrayList<>();
 
     public void save(Order order){
-        arrList.add(order);
+        orders.add(order);
     };
     public List<Order> findAll(){
-        return arrList;
+        return orders;
     };
 }
