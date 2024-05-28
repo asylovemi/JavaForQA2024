@@ -7,13 +7,13 @@ testImplementation 'io.rest-assured:rest-assured:5.4.0'
 
 1.2 Обновить gradle зависимости: Gradle -> Reload All Gradle Projects
 2. Создать каталог src/test/java
-3. Созадать с помощью Idea тест для CustomerService
+3. Создать с помощью Idea тест для CustomerService
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.shop.repository.CustomerRepository;
 
-class CustomerServiceTest {
+class service.CustomerServiceTest {
 
     private final CustomerRepository repository = Mockito.mock();
     private final CustomerService customerService = new CustomerService(repository);
@@ -52,12 +52,13 @@ public void shouldThrowWhenCustomerNotFound() {
 }
 
 5. Создать аналогичные тесты для Product-а
+-----------------------------------
 6. Применяем AssetJ
-6.1 Меняем/добавляем в CustomerServiceTest
+6.1 Меняем/добавляем в service.CustomerServiceTest
 
 Assertions.assertEquals(mockedCustomer, customer); -> assertThat(customer).isEqualTo(mockedCustomer);
 
-6.2 Меняем/добавляем в CustomerServiceTest
+6.2 Меняем/добавляем в service.CustomerServiceTest
 
 Assertions.assertThrows(
         EntityNotFoundException.class,
@@ -83,7 +84,7 @@ import java.util.List;
 import static io.restassured.RestAssured.when;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CustomerControllerTest {
+class controller.CustomerControllerTest {
 
     @MockBean
     CustomerRepository customerRepository;
